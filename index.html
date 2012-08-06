@@ -49,7 +49,8 @@
 			  
             </ul>
 			<ul class="nav pull-right">
-				<li><a href="index.html#cashoff">Cash Off</a></li>
+				<li><a id="top_cash_off" href="index.html#cashoff" rel="popover" data-placement="bottom" data-content="Click here if so (you can cancel or delete the report at any time)" data-original-title="Ready to run and end-of-shift report?">Cash Off</a></li>
+
 				<li><a href="index.html#notifications">Notifications&nbsp;<span class="badge badge-info">8</span></a></li>
 				<li class="divider-vertical"></li>
 				<li class="dropdown">
@@ -129,6 +130,11 @@
     <script src="resources/bootstrap-collapse.js"></script>
     <script src="resources/bootstrap-carousel.js"></script>
     <script src="resources/bootstrap-typeahead.js"></script>
+	<script>
+		$(document).ready(function() {
+		  $('#top_cash_off').popover();
+		});
+	</script>
 
   
 
