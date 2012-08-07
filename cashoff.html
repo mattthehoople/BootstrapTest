@@ -49,7 +49,7 @@
 			  
             </ul>
 			<ul class="nav pull-right">
-				<li><a id="top_cash_off" data-toggle="modal" href="#cashOffCheck" rel="popover" data-placement="bottom" data-content="Click here if so (you can cancel or delete the report at any time)" data-original-title="Ready to run and end-of-shift report?">Cash Off</a></li>
+				<li><a id="top_cash_off" href="index.html#cashoff" rel="popover" data-placement="bottom" data-content="Click here if so (you can cancel or delete the report at any time)" data-original-title="Ready to run and end-of-shift report?">Cash Off</a></li>
 
 				<li><a data-toggle="modal" href="#notifications">Notifications&nbsp;<span class="badge badge-info">4</span></a></li>
 				<li class="divider-vertical"></li>
@@ -71,56 +71,81 @@
     </div>
 
     <div class="container">
+
 		<div class="page-header">
-			<h1>Your business at a glance</h1>
+			<h1>Cash Off</h1>
 		</div>
-		<p>The numbers tell it how it realy is.</p>
-		<div class="alert">
-			<button class="close" data-dismiss="alert">×</button>
-			<p>You've missed a scheduled end-of-shift cash off</p>
-			<button class="btn btn-warning">Cash off now</button>
+<div class="row">
+    <div class="span12">
+		<h3>Step 1: Reconciliation</h3>	
+		<p>Takings for the day (2 steps remaining).</p>
+		<div class="progress progress-striped active">
+		  <div class="bar"
+			   style="width: 33%;"></div>
 		</div>
-		
-
-	  
-	<div class="row">
-		<div class="span12">
-			<h3>Sales - Year to date</h3>
-			<p>Total sales thus far</p>
-		</div>
-		<div id="salesChart" class="span12" style="min-height:400px;"></div>
 	</div>
-
-      <!-- Example row of columns -->
-      <div class="row">
-        <div class="span4">
-          <h2>Cost of sales</h2>
-			<p>How much it's currently costing you to do business.</p>
-			<div class="alert alert-success">
-				<h4 class="success-heading">Good news!</h4>
-				Cost of sales is currently running at <strong>22.6%</strong>
-			</div>
-          <p><a class="btn" href="#">View details &raquo;</a></p>
-        </div>
-        <div class="span4">
-          <h2>Variance</h2>
-           <p>How much it is costing to do business against how much it should</p>
-		   <div class="alert alert-warning">
-				<h4 class="warning-heading">Hmmmm</h4>
-				Variance could be better. It's currently sat at <strong>3.8%</strong>
-			</div>
-          <p><a class="btn" href="#">View details &raquo;</a></p>
-       </div>
-        <div class="span4">
-          <h2>Profitibility</h2>
-          <p>This indicates how efficiently your business is running. The higher the number the better.</p>
-		   <div class="alert alert-error">
-				<h4 class="error-heading">Bad news</h4>
-				You're currently running at a loss.
-			</div>		  
-          <p><a class="btn" href="#">View details &raquo;</a></p>
-        </div>
-      </div>
+	<div class="span12">	
+      <form class="form-horizontal">
+        <fieldset>
+		   <div class="control-group">
+            <label class="control-label" for="optionsCheckbox">End of day?</label>
+            <div class="controls">
+              <label class="checkbox">
+                <input type="checkbox" id="optionsCheckbox" value="option1">
+                Run an end-of-day report while you're at it
+              </label>
+            </div>
+          </div>
+          <div class="control-group">
+            <label class="control-label" for="input01">Till/Register Total Sales</label>
+            <div class="controls">
+              <input type="number" step="0.01" class="input-xlarge" id="input01">
+              <p class="help-block">The total from your credit/debit card machine</p>
+            </div>
+          </div>		  
+          <div class="control-group">
+            <label class="control-label" for="input01">Card payments</label>
+            <div class="controls">
+              <input type="number" class="input-xlarge" id="input01">
+              <p class="help-block">The total from your credit/debit card machine</p>
+            </div>
+          </div>
+          <div class="control-group">
+            <label class="control-label" for="input01">Cheques</label>
+            <div class="controls">
+              <input type="number" class="input-xlarge" id="input02">
+              <p class="help-block">Old-school</p>
+            </div>
+          </div>
+          <div class="control-group">
+            <label class="control-label" for="input01">Vouchers/Coupons</label>
+            <div class="controls">
+              <input type="number" class="input-xlarge" id="input02">
+              <p class="help-block">Promos FTW</p>
+            </div>
+          </div>
+          <div class="control-group">
+            <label class="control-label" for="input01">Cash</label>
+            <div class="controls">
+              <input type="number" class="input-xlarge" id="input02">
+              <p class="help-block">What you need to take out of the till</p>
+            </div>
+          </div>		  
+          <div class="control-group">
+            <label class="control-label" for="textarea">Notes</label>
+            <div class="controls">
+			  <p class="help-block">Did anything make this shift different from the norm?</p>
+              <textarea class="input-xlarge" id="textarea" rows="3"></textarea>
+            </div>
+          </div>
+          <div class="form-actions">
+            <button type="submit" class="btn btn-primary">Save changes</button>
+            <button class="btn">Cancel</button>
+          </div>
+        </fieldset>
+		</div>
+      </form>
+  </div>
 
       <hr>
 
@@ -162,27 +187,6 @@
 	  </div>
 	</div>	
 
-	<div class="modal hide" id="cashOffCheck">
-	  <div class="modal-header">
-		<h3>Before you can cash off, you need the following items to hand:</h3>
-	  </div>
-		<p>
-		  <ul>
-			<li>The end-of-shift report from your till or register</li>
-			<li>Credit card machine end-off-shift report</li>
-			<li>A note of any comps</li>
-			<li>Any cheques</li>
-			<li>Any vouchers or coupons</li>
-			<li>A note of your wastage</li>
-			<li>The cold hard cash from your register drawer</li>
-		  </ul>
-		</p>
-	  <div class="modal-footer">
-		<a href="cashoff.html" class="btn btn-primary">Got them - let's go!</a>
-		<a href="#" class="btn" data-dismiss="modal">Close</a>
-	  </div>
-	</div>		
-	
     <!-- Le javascript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
@@ -206,47 +210,6 @@ $(function () {
     var chart;
     $(document).ready(function() {
 		$('#top_cash_off').popover();
-        chart = new Highcharts.Chart({
-            chart: {
-                renderTo: 'salesChart',
-                type: 'line'
-            },
-			title: {
-				text: null  
-			}, 
-            xAxis: {
-                categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
-                    'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
-            },
-            yAxis: {
-                title: {
-                    text: 'Sales (£)'
-                },
-                plotLines: [{
-                    value: 0,
-                    width: 1,
-                    color: '#808080'
-                }]
-            },
-            tooltip: {
-                formatter: function() {
-                        return '<b>'+ this.series.name +'</b><br/>'+
-                        this.x +': '+ this.y +'°C';
-                }
-            },
-            legend: {
-                layout: 'vertical',
-                align: 'right',
-                verticalAlign: 'top',
-                x: -10,
-                y: 100,
-                borderWidth: 0
-            },
-            series: [{
-                name: 'Sales',
-                data: [700.0, 690.9, 950.5, 140.5, 1800.2, 210.5, 250.2, 626.5, 723.3, 818.3, 1113.9, 499.6]
-            }]
-        });
     });
     
 });
