@@ -11,7 +11,7 @@ window.Router = Backbone.Router.extend({
 
     home: function () {
 
-        this.overviewTop = new OverviewTop();
+		this.overviewTop = new OverviewTop();
         this.overviewTop.render();
 		$("#overview_top").html(this.overviewTop.el);
 		
@@ -26,17 +26,14 @@ window.Router = Backbone.Router.extend({
         this.footer = new Footer();
         this.footer.render();		
 		$("#footer").html(this.footer.el);
-		
-
-		
+				
         this.notifications = new NotificationsModal();
         this.notifications.render();		
 		$("#notifications_modal").html(this.notifications.el);		
-
-				
+		
         this.cashoffModal = new CashOffModal();
         this.cashoffModal.render();		
-		$("#cashoff_modal").html(this.cashoffModal.el);	
+		$("#cashoff_modal").html(this.cashoffModal.el);		
 
 	}
 
