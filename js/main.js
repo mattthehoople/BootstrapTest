@@ -8,17 +8,21 @@ window.Router = Backbone.Router.extend({
         this.header = new Header();
         $('#header').html(this.header.render().el);
 		$('#top_cash_off').popover();
+		
+        this.footer = new Footer();
+        this.footer.render();		
+		$("#footer").html(this.footer.el);		
     },
 
     home: function () {
 
 		this.overviewTop = new OverviewTop();
         this.overviewTop.render();
-		$("#overview_top").html(this.overviewTop.el);
+		$("#center").append(this.overviewTop.el);
 		
         this.salesChart = new SalesChart();
         this.salesChart.render();	
-		$("#sales_chart").html(this.salesChart.el);
+		$("#center").append(this.salesChart.el);
 		var chart;
 		 chart = new Highcharts.Chart({
             chart: {
@@ -64,19 +68,19 @@ window.Router = Backbone.Router.extend({
 
         this.trafficLightStats = new TrafficLightStats();
         this.trafficLightStats.render();		
-		$("#traffic_light_stats").html(this.trafficLightStats.el);
+		$("#center").append(this.trafficLightStats.el);
 		
         this.footer = new Footer();
         this.footer.render();		
-		$("#footer").html(this.footer.el);
+		$("#center").append(this.footer.el);
 				
         this.notifications = new NotificationsModal();
         this.notifications.render();		
-		$("#notifications_modal").html(this.notifications.el);		
+		$("#center").append(this.notifications.el);		
 		
         this.cashoffModal = new CashOffModal();
         this.cashoffModal.render();		
-		$("#cashoff_modal").html(this.cashoffModal.el);		
+		$("#center").append(this.cashoffModal.el);		
 
 	}
 
